@@ -18,6 +18,9 @@ if (urlPrefix !== "") {
     debug("urlPrefix = " + urlPrefix);
 }
 app.use(urlPrefix, express.static(path.join("public")));
+app.get(urlPrefix + "/", (_request, response) => {
+    response.redirect(urlPrefix + "/json");
+});
 app.use(urlPrefix + "/json", routerJSON);
 app.use(urlPrefix + "/rss", routerRSS);
 app.use((_request, _response, next) => {

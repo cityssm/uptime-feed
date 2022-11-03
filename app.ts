@@ -41,6 +41,10 @@ app.use(urlPrefix, express.static(path.join("public")));
  * ROUTES
  */
 
+app.get(urlPrefix + "/", (_request, response) => {
+    response.redirect(urlPrefix + "/json");
+});
+
 app.use(urlPrefix + "/json", routerJSON);
 app.use(urlPrefix + "/rss", routerRSS);
 
