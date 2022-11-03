@@ -1,5 +1,9 @@
 # Uptime Feed
 
+[![Codacy grade](https://img.shields.io/codacy/grade/c1e38f5d78b640d5b3e55d78c2b435ec)](https://app.codacy.com/gh/cityssm/uptime-feed/dashboard)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/cityssm/uptime-feed)](https://codeclimate.com/github/cityssm/uptime-feed)
+[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/cityssm/uptime-feed)](https://app.snyk.io/org/cityssm/project/7d36a41a-ee6a-44fa-a374-a7631bda7308)
+
 ![JSON Output](docs/json.png)
 
 RSS and JSON application startup notifications, useful for informally notifying affected users of unexpected server restarts.
@@ -18,3 +22,33 @@ with the last time the application was started.
 
 If the server restarts, the timestamp will change, resulting in a new notification.
 
+If the feed is unavailable, either the application is down or the server is.
+
+## Getting Started
+
+Download a release or clone the repository.
+
+Install the dependencies.
+
+```sh
+npm install
+```
+
+Create a `data/config.js` file.
+
+```sh
+cp data/configSample.js data/config.js
+```
+
+Run the application.
+
+```sh
+npm start
+```
+
+Alternatively, the application can be set up as a Windows service.
+
+```sh
+npm link node-windows
+windowsService-install.bat
+```
