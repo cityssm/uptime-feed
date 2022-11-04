@@ -1,8 +1,12 @@
 # Uptime Feed
+## _Did the server restart?_
 
 [![Codacy grade](https://img.shields.io/codacy/grade/c1e38f5d78b640d5b3e55d78c2b435ec)](https://app.codacy.com/gh/cityssm/uptime-feed/dashboard)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/cityssm/uptime-feed)](https://codeclimate.com/github/cityssm/uptime-feed)
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/cityssm/uptime-feed)](https://app.snyk.io/org/cityssm/project/7d36a41a-ee6a-44fa-a374-a7631bda7308)
+
+
+![RSS Output](docs/rss.png)
 
 ![JSON Output](docs/json.png)
 
@@ -26,29 +30,38 @@ If the feed is unavailable, either the application is down or the server is.
 
 ## Getting Started
 
-Download a release or clone the repository.
+**Download** a release or clone the repository.
 
-Install the dependencies.
+**Install** the dependencies.
 
-```sh
+```Shell
 npm install
 ```
 
 Create a `data/config.js` file.
 
-```sh
+```Shell
 cp data/configSample.js data/config.js
 ```
 
-Run the application.
+**Run** the application.
 
-```sh
+```Shell
 npm start
 ```
 
 Alternatively, the application can be set up as a Windows service.
 
-```sh
+```Shell
 npm link node-windows
 windowsService-install.bat
+```
+
+**Subscribe** to the RSS feed or read the JSON file.
+_Note that the server port is configurable,_
+and there is an option to customize the URLs (helpful when proxying).
+
+```
+http://serverName:9111/rss
+http://serverName:9111/json
 ```
