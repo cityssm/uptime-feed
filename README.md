@@ -5,7 +5,6 @@
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/cityssm/uptime-feed)](https://codeclimate.com/github/cityssm/uptime-feed)
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/cityssm/uptime-feed)](https://app.snyk.io/org/cityssm/project/7d36a41a-ee6a-44fa-a374-a7631bda7308)
 
-
 ![RSS Output](docs/rss.png)
 
 ![JSON Output](docs/json.png)
@@ -34,34 +33,24 @@ If the feed is unavailable, either the application is down or the server is.
 
 **Install** the dependencies.
 
-```Shell
-npm install
-```
+    npm install
 
 Create a `data/config.js` file.
 
-```Shell
-cp data/configSample.js data/config.js
-```
+    cp data/configSample.js data/config.js
 
 **Run** the application.
 
-```Shell
-npm start
-```
+    npm start
 
 Alternatively, the application can be set up as a Windows service.
 
-```Shell
-npm link node-windows
-windowsService-install.bat
-```
+    npm link node-windows
+    windowsService-install.bat
 
 **Subscribe** to the RSS feed or read the JSON file.
 _Note that the server port is configurable,_
 and there is an option to customize the URLs (helpful when proxying).
 
-```
-http://serverName:9111/rss
-http://serverName:9111/json
-```
+    http://serverName:9111/rss
+    http://serverName:9111/json
