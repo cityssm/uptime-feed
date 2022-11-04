@@ -10,14 +10,17 @@ const onError = (error) => {
         throw error;
     }
     switch (error.code) {
-        case "EACCES":
+        case "EACCES": {
             debug("Requires elevated privileges");
             process.exit(1);
-        case "EADDRINUSE":
+        }
+        case "EADDRINUSE": {
             debug("Port is already in use.");
             process.exit(1);
-        default:
+        }
+        default: {
             throw error;
+        }
     }
 };
 const onListening = (server) => {
