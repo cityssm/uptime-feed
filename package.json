@@ -24,6 +24,7 @@
     "homepage": "https://github.com/cityssm/uptime-feed#readme",
     "private": true,
     "dependencies": {
+        "@cityssm/ntfy-publish": "^0.1.0",
         "cross-env": "^7.0.3",
         "debug": "^4.3.4",
         "exit-hook": "^3.1.2",

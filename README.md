@@ -5,11 +5,13 @@
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/cityssm/uptime-feed)](https://codeclimate.com/github/cityssm/uptime-feed)
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/cityssm/uptime-feed)](https://app.snyk.io/org/cityssm/project/7d36a41a-ee6a-44fa-a374-a7631bda7308)
 
+![Android Push Notification](docs/push.png)
+
 ![RSS Output](docs/rss.png)
 
 ![JSON Output](docs/json.png)
 
-RSS and JSON application startup notifications, useful for informally notifying affected users of unexpected server restarts.
+Push notifications (using [ntfy.sh](https://ntfy.sh/)), RSS and JSON application startup notifications, useful for informally notifying affected users of unexpected server restarts.
 
 ## Why?
 
@@ -22,6 +24,7 @@ but finding out about server problems sooner helps everyone.
 This simple application runs on a server, preferably as a service that starts with the server.
 It hosts an RSS Feed (and a JSON response, if that's your preference)
 with the last time the application was started.
+It also has the ability to send a push notification using the [ntfy](https://ntfy.sh/) notification service.
 
 If the server restarts, the timestamp will change, resulting in a new notification.
 
@@ -54,3 +57,6 @@ and there is an option to customize the URLs (helpful when proxying).
 
     http://serverName:9111/rss
     http://serverName:9111/json
+
+**Install** the appropriate [ntfy app on your phone](https://ntfy.sh/docs/subscribe/phone/),
+and subscribe to the push notification topic set up in the config file.

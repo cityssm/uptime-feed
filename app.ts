@@ -3,16 +3,33 @@ import express from "express";
 
 import path from "path";
 
+import ntfyPublish from "@cityssm/ntfy-publish";
+
 import routerRSS from "./routes/rss.js";
 import routerJSON from "./routes/json.js";
 
 import * as configFunctions from "./helpers/functions.config.js";
-import { startupMillis } from "./helpers/functions.uptime.js";
+import { ipAddress, startupMillis } from "./helpers/functions.uptime.js";
 
 import Debug from "debug";
 const debug = Debug("uptime-feed:app");
 
 debug("startupMillis = " + startupMillis);
+
+/*
+ * Send Notification
+ */
+
+if (configFunctions.getProperty("ntfy.topic")) {
+    await ntfyPublish({
+        server: configFunctions.getProperty("ntfy.server"),
+        topic: configFunctions.getProperty("ntfy.topic"),
+        title: configFunctions.getProperty("applicationName") + ": " + ipAddress,
+        message: new Date(startupMillis).toLocaleDateString() + " " + new Date(startupMillis).toLocaleTimeString(),
+        tags: ["computer"],
+        priority: "high"
+    });
+}
 
 /*
  * INITIALIZE APP

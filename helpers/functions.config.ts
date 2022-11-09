@@ -18,6 +18,8 @@ configFallbackValues.set("urlPrefix", "");
 export function getProperty(propertyName: "applicationName"): string;
 export function getProperty(propertyName: "httpPort"): number;
 export function getProperty(propertyName: "urlPrefix"): string;
+export function getProperty(propertyName: "ntfy.server"): string;
+export function getProperty(propertyName: "ntfy.topic"): string;
 
 export function getProperty(propertyName: string): unknown {
     const propertyNameSplit = propertyName.split(".");
